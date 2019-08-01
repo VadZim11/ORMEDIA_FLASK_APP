@@ -25,3 +25,4 @@ myvenv/Scripts/Activate.ps1
 myvenv/Scripts/activate
 myvenv/Scripts/activate.bat
 myvenv/Scripts/deactivate.bat
+.vscode/settings.json
