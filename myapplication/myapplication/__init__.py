@@ -1,22 +1,22 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h1>Hello World<h1>"
+    return render_template("home.html")
 
 @app.route("/movies")
 def movies ():
-    return "<h2>This movies page<h2>"
+    return render_template("movies.html")
 
 @app.route("/courses")
 def courses ():
-    return "<h2>This courses page<h2>"
+    return render_template("courses.html")
 
 @app.route("/weather")
 def weather():
-    return "<h2>This weather page<h2>"
+    return render_template("weather.html")
 
 if __name__ == "__main__":
     app.run()
