@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -17,6 +17,3 @@ def courses ():
 @app.route("/weather")
 def weather():
     return render_template("weather.html")
-
-if __name__ == "__main__":
-    app.run()
