@@ -4,6 +4,7 @@ from muvies.muvies import muvies
 from weather.weather import weather
 from courses.courses import courses
 
+
 app = Flask(__name__)
 app.config.from_object(Myconfiguration)
 
