@@ -11,9 +11,17 @@
       <div class="row">
           <div class="col-lg-6">
             <div class="input-group">
-              <label for="cur_abbreviation">Select curs</label>
-              <input type="text" class="form-control" placeholder="USD" name="cur_abbreviation">
-            </div><!-- /input-группа -->  
+              <div>
+                  <label for="inputState">Select curs</label>
+                  <select select name="cur_abbreviation" id="inputState" class="form-control">
+                    <option  value="ALL" selected>ALL</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="RUB">RUB</option>
+                  </select>
+                </div>
+            </div><!-- /input-группа --> 
+            <button type="submit" class="btn btn-primary" value="USD">Select</button> 
           </div><!-- /.col-lg-6 -->  
       </div><!-- /.строки -->  
      
