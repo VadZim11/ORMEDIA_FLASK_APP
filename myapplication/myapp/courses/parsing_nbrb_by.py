@@ -1,11 +1,7 @@
 import requests
 import json
 
-
-def get_html(url):
-    r = requests.get(url)
-    return r.json()
-
-def get_json():
-    url = "https://nbrb.by/API/ExRates/Rates?Periodicity=0"
-    return(get_html(url))
+def parsing_cours(Cur_Abbreviation):
+    url = f"http://www.nbrb.by/API/ExRates/Rates/{Cur_Abbreviation}?ParamMode=2"
+    courses_nbrb = requests.get(url).json()
+    return courses_nbrb

@@ -5,5 +5,19 @@
 {% endblock %}
 
 {% block hello %}
+<div class="container">
+  <form  method="POST">
+    
+      <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group">
+              <label for="cur_abbreviation">Select curs</label>
+              <input type="text" class="form-control" placeholder="USD" name="cur_abbreviation">
+            </div><!-- /input-группа -->  
+          </div><!-- /.col-lg-6 -->  
+      </div><!-- /.строки -->  
+     
+  </form>
+</div> 
   {{ text }}
 {% endblock %}
