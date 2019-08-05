@@ -6,7 +6,6 @@ courses = Blueprint("courses", __name__, template_folder="templates")
 
 @courses.route("/", methods=["POST", "GET"])
 def index():
-    cur_abbreviation = "USD"
     if request.method == "POST":
         cur_abbreviation = request.form.get("cur_abbreviation")
         if cur_abbreviation == "ALL":
