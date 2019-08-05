@@ -1,2 +1,3 @@
 # ORMEDIA_FLASK_APP
-Look thisis applicathion  http://vadzim11.pythonanywhere.com
+
+See this application at this link  http://vadzim11.pythonanywhere.com
