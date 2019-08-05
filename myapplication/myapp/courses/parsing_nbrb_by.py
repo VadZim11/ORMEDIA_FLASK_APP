@@ -21,5 +21,5 @@ def parsing_cours_all():
             + str(courses_nbrb_json[i]["Cur_Scale"]) + " "
             + str(courses_nbrb_json[i]["Cur_Abbreviation"])
             + " - " +  str(courses_nbrb_json[i]["Cur_OfficialRate"]) 
-            + " BIN\n")  
+            + " BIN\n   ")  
     return courses_nbrb.lstrip()
