@@ -15,6 +15,7 @@ def parsing_afisha():
     for i in h2:
         list_name += i.findAll("li", {"class": "lists__li"})         
 
+    # delete premiers muvies
     list_delete_muvi = []
     for i in list_delete:
         name = i.find("a", {"class": "name"}).text
@@ -22,7 +23,6 @@ def parsing_afisha():
         muvi_image = i.find("img").get("src")
         d = dict(name = name , muvi_href = muvi_href, muvi_image = muvi_image)
         list_delete_muvi.append(d)
-
 
     list_muvi = []
     for i in list_name:
@@ -32,6 +32,7 @@ def parsing_afisha():
         d = dict(name = name , muvi_href = muvi_href, muvi_image = muvi_image)
         list_muvi.append(d)  
         
+    # delete premiers muvies
     for i in list_delete_muvi:
         for i2 in list_muvi:
             if i["muvi_href"] == i2["muvi_href"]:
