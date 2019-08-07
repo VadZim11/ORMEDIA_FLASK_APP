@@ -5,5 +5,9 @@
 {% endblock %}
 
 {% block hello %}
-  This is Muvies page
+<pre>  
+  {% for i in text %}
+    {{ i["name"] }}
+  {% endfor %}
+</pre>
 {% endblock %}
