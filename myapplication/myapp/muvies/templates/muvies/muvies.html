@@ -5,9 +5,13 @@
 {% endblock %}
 
 {% block hello %}
-<pre>  
-  {% for i in text %}
-    {{ i["name"] }}
-  {% endfor %}
-</pre>
+
+{% for i in text %}
+<div class="row">
+  <div class="col-md-6"><h3>{{ i["name"] }}</h3>
+    <img src="{{ i["muvi_image"] }}" alt="{{ i["name"] }}" class="img-thumbnail">
+  </div> 
+</div>
+{% endfor %}
+
 {% endblock %}

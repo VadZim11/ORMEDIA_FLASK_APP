@@ -1,10 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
+import os
 
 
 def parsing_afisha():
-    url = "https://afisha.tut.by/film/"
+    url = "https://afisha.tut.by/film"
+    
     r = requests.get(url)
+
     afisha = BeautifulSoup(r.text, "lxml")
     h1 = afisha.find("div", {"class": "events-block js-cut_wrapper"})
     h2 = h1.findAll("ul", {"class": "b-lists list_afisha col-5"})
