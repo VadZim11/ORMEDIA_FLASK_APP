@@ -5,5 +5,26 @@
 {% endblock %}
 
 {% block hello %}
-  This is Weather page
+<div class="container">
+  <form  method="POST">
+    
+      <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group">
+              <div>
+                <label for="inputState">Select town</label>
+                <select select name="city_name" id="inputState" class="form-control">
+                  <option  value="Minsk" selected>Minsk</option>
+                </select>
+              </div>
+            </div><!-- /input-группа --> 
+            <button type="submit" class="btn btn-primary" value="Minsk">Select</button> 
+          </div><!-- /.col-lg-6 -->  
+      </div><!-- /.строки -->       
+  </form>
+
+  <h4>
+    {{ text }}
+  </h4>
+  
 {% endblock %}
