@@ -27,9 +27,12 @@
           </div><!-- /.col-lg-6 -->  
       </div><!-- /.строки -->       
   </form>
+
+  <h2>Weather and forecasts in {{city_name}}, BY</h2>
   
+  {% for i in text%}
   <pre>
-    {{ text }}
+    {{ i["dt_txt"]}} - {{i["wether_temp"] }}
   </pre>
-  
+  {% endfor %}
 {% endblock %}
