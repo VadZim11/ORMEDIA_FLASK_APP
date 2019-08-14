@@ -29,10 +29,23 @@
   </form>
 
   <h2>Weather and forecasts in {{city_name}}, BY</h2>
-  
-  {% for i in text%}
-  <pre>
-    {{ i["dt_txt"]}} - {{i["wether_temp"] }}
-  </pre>
-  {% endfor %}
+
+  <table class="table table-striped table-condensed">
+    <tr class="info">
+      <th><h4>Data of time forecasted</h4></th>
+      <th><h4>Temperature</h4></th>
+      <th><h4>Wind speed</h4></th>
+      <th><h4>Atmospheric pressure</h4></th>
+      <th><h4>Weather icon</h4></th>
+    </tr>
+    {% for i in text%}
+    <tr>
+      <th style="vertical-align:middle"><h4>{{ i["dt_txt" ]}}</h4></th> 
+      <th style="vertical-align:middle"><h4>{{ i["temp"] }} °C</h4></th>
+      <th style="vertical-align:middle"><h4>{{ i["wind_speed"] }} m/s</h4></th>
+      <th style="vertical-align:middle"><h4>{{ i["pressure"] }} hPa</h4></th>
+      <th style="vertical-align:middle"><img src="{{ i["weather_icon"] }}" class="img-responsive" alt="Responsive image"></th>
+    </tr>
+    {% endfor %}
+  </table>
 {% endblock %}
