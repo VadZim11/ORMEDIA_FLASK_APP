@@ -9,6 +9,6 @@ def index():
     if request.method == "POST":
         cur_abbreviation = request.form.get("cur_abbreviation")
         if cur_abbreviation == "ALL":
-            return render_template("courses/courses.html", text=parsing_cours_all())
-        return render_template("courses/courses.html", text=parsing_cours(cur_abbreviation))
-    return render_template("courses/courses.html")
+            return render_template("courses/courses.html", text=parsing_cours_all(), cur_abbreviation="all currencies")
+        return render_template("courses/courses.html", text=parsing_cours(cur_abbreviation), cur_abbreviation=cur_abbreviation)
+    return render_template("courses/courses.html", text=parsing_cours("USD"), cur_abbreviation="USD")
