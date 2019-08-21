@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
-
 def parsing_afisha():
     url = "https://afisha.tut.by/film"
     try:
