@@ -23,7 +23,8 @@ def parsing_afisha():
             name = i.find("a", {"class": "name"}).text
             muvi_href = i.find("a", {"class": "media"}).get("href")
             muvi_image = i.find("img").get("src")
-            d = dict(name = name , muvi_href = muvi_href, muvi_image = muvi_image)
+            film_genre = i.find("div", {"class": "txt"}).find("p").text
+            d = dict(name = name , muvi_href = muvi_href, muvi_image = muvi_image, film_genre = film_genre)
             list_delete_muvi.append(d)
 
         list_muvi = []
@@ -31,7 +32,8 @@ def parsing_afisha():
             name = i.find("a", {"class": "name"}).text
             muvi_href = i.find("a", {"class": "media"}).get("href")
             muvi_image = i.find("img").get("src")
-            d = dict(name = name , muvi_href = muvi_href, muvi_image = muvi_image)
+            film_genre = i.find("div", {"class": "txt"}).find("p").text
+            d = dict(name = name , muvi_href = muvi_href, muvi_image = muvi_image, film_genre = film_genre)
             list_muvi.append(d)  
         
         # delete premiers muvies

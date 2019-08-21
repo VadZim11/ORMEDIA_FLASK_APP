@@ -7,13 +7,14 @@ movies = Blueprint("movies", __name__, template_folder="templates")
 
 @movies.route("/")
 def index():
-    
+
     db.create_all()
+    
     for i in parsing_afisha():
-        movi = Movies(name = i["name"], muvi_href = i["muvi_href"], muvi_image = i["muvi_image"])
+        movi = Movies(name = i["name"], muvi_href = i["muvi_href"], muvi_image = i["muvi_image"], film_genre = i["film_genre"])
         db.session.add(movi)
         db.session.commit()
 
-    
+    movies = Movies.query.all()
 
-    return render_template("movies/movies.html", text = parsing_afisha())
+    return render_template("movies/movies.html", movies = movies)
