@@ -6,14 +6,32 @@
 
 {% block hello %}
 
-{% for i in movies %}
 <div class="row">
-  <div class="col-md-6">
+  {% for i in pages.items %}
+  <div class="col-md-3">
     <h3>{{ i.name }}</h3>
     <img src="{{ i.muvi_image }}" alt="{{ i.name }}" class="img-thumbnail">
     <h3>{{ i.film_genre }}</h3>
-  </div> 
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
+
+<nav>
+    <ul class="pagination">
+      <li {% if not pages.has_prev %} class="disabled" {% endif %}>
+        <a href="./?page={{ pages.prev_num }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+
+      {% for page in pages.iter_pages(left_edge = 7, right_edge = 7) %}
+      <li {% if page == pages.page %} class="active" {% endif %}>
+        <a href="./?page={{ page }}">{{ page }}<span class="sr-only"></span></a>
+      </li>
+      {% endfor %} 
+
+      <li {% if not pages.has_next %} class="disabled" {% endif %}>
+          <a href="./?page={{ pages.next_num }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+    </ul>
+  </nav>
 
 {% endblock %}
