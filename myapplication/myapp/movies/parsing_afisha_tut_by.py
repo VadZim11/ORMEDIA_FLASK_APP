@@ -44,7 +44,7 @@ def parsing_afisha():
 
     except:
         list_muvi = []
-        d = dict(name = "Sorry, this page is not available." , muvi_href = "", muvi_image = "https://webshake.ru/uploads/img/2a833dfb0c57fe903fac21a3f7aa394f86d97c898800213716df5721048f7e72.png")
+        d = dict(name = "Sorry, this page is not available." , muvi_href = "", muvi_image = "https://webshake.ru/uploads/img/2a833dfb0c57fe903fac21a3f7aa394f86d97c898800213716df5721048f7e72.png", film_genre = "")
         list_muvi.append(d)  
 
     return list_muvi
