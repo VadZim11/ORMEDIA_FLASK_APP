@@ -6,5 +6,5 @@ def home():
     return render_template("home.html")
 
 @app.route("/contakts")
-def contakt():
+def contakts():
     return render_template("contakts.html")
