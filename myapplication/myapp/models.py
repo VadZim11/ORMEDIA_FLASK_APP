@@ -1,7 +1,7 @@
 from app import db
 import datetime
 
-class Movies(db.Model):
+class Movies(db.Model): 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250))
     muvi_href = db.Column(db.String(250))
