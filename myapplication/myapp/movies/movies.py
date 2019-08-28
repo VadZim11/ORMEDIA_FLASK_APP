@@ -42,6 +42,12 @@ def index():
         return render_template("movies/movies.html", pages=pages, dates=dates, date_muvie=date_muvie)
     
     else:
+        page = request.args.get("page")
+        if page and page.isdigit():
+            page = int(page)
+        else:
+            page = 1 
+
         date = request.args.get("date")
         dates = db.session.query(Movies.date).distinct().all()
         dates_prev = []
@@ -51,12 +57,6 @@ def index():
             date_muvie = date
         else:
             date_muvie =  datetime.date.today()
-
-        page = request.args.get("page")
-        if page and page.isdigit():
-            page = int(page)
-        else:
-            page = 1 
 
         pages = movies.filter(Movies.date == date_muvie).paginate(page=page, per_page=4)
 
