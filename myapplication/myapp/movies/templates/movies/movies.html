@@ -6,6 +6,30 @@
 
 {% block hello %}
 
+<div class="container">
+  <form  method="POST">    
+      <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group">
+              <div>
+                <label for="inputState">Select date</label>
+                <select select name="date_movie" id="inputState" class="form-control">                  
+                  <option  value="{{ dates[-1].date }}">{{ dates[-1].date }}</option>
+                  {% for date in dates %}
+                  <option  value="{{ date.date }}" >{{ date.date }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div><!-- /input-группа --> 
+            <button type="submit" class="btn btn-primary" value="">Select</button> 
+          </div><!-- /.col-lg-6 -->  
+      </div><!-- /.строки -->       
+  </form>
+
+  <div class="container">
+    <h2> {{ date_muvie }} </h2>
+  </div>
+
 <div class="row">
   {% for i in pages.items %}
   <div class="col-md-3">
@@ -19,17 +43,17 @@
 <nav>
     <ul class="pagination">
       <li {% if not pages.has_prev %} class="disabled" {% endif %}>
-        <a href="./?page={{ pages.prev_num }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        <a href="./?page={{ pages.prev_num }}&date={{ date_muvie }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
       </li>
 
       {% for page in pages.iter_pages(left_edge = 7, right_edge = 7) %}
       <li {% if page == pages.page %} class="active" {% endif %}>
-        <a href="./?page={{ page }}">{{ page }}<span class="sr-only"></span></a>
+        <a href="./?page={{ page }}&date={{ date_muvie }}">{{ page }}<span class="sr-only"></span></a>
       </li>
       {% endfor %} 
 
       <li {% if not pages.has_next %} class="disabled" {% endif %}>
-          <a href="./?page={{ pages.next_num }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+          <a href="./?page={{ pages.next_num }}&date={{date_muvie}}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
     </ul>
   </nav>
