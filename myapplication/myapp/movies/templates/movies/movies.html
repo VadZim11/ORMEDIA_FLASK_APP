@@ -13,8 +13,7 @@
             <div class="input-group">
               <div>
                 <label for="inputState">Select date</label>
-                <select select name="date_movie" id="inputState" class="form-control">                  
-                  <option  value="{{ dates[-1].date }}">{{ dates[-1].date }}</option>
+                <select select name="date_movie" id="inputState" class="form-control"> 
                   {% for date in dates %}
                   <option  value="{{ date.date }}" >{{ date.date }}</option>
                   {% endfor %}

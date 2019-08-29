@@ -39,7 +39,7 @@ def index():
 
         dates = db.session.query(Movies.date).distinct().all()
 
-        return render_template("movies/movies.html", pages=pages, dates=dates, date_muvie=date_muvie)
+        return render_template("movies/movies.html", pages=pages, dates=reversed(dates), date_muvie=date_muvie)
     
     else:
         page = request.args.get("page")
@@ -60,4 +60,4 @@ def index():
 
         pages = movies.filter(Movies.date == date_muvie).paginate(page=page, per_page=4)
 
-        return render_template("movies/movies.html", pages=pages, dates=dates, date_muvie=date_muvie)
+        return render_template("movies/movies.html", pages=pages, dates=reversed(dates), date_muvie=date_muvie)

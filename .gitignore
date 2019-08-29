@@ -28,3 +28,4 @@ myvenv/Scripts/deactivate.bat
 .vscode/settings.json
 myapplication/myapp/weather/ipa_wether.py
 myapplication/myapp/password_sql.py
+.vscode/launch.json
