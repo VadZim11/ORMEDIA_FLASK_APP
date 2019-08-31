@@ -6,7 +6,10 @@ import json
 @app.route("/")
 def home():
     url = "http://rzhunemogu.ru/RandJSON.aspx?CType=1"
-    anekdot = requests.get(url).json(strict=False)["content"]
+    try:
+        anekdot = requests.get(url).json(strict=False)["content"]
+    except:
+        anekdot = requests.get(url).json(strict=False)["content"]    
     return render_template("home.html", anekdot=anekdot)
 
 @app.route("/contakts")

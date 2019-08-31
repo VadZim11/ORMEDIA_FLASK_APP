@@ -28,22 +28,22 @@
       </div><!-- /.строки -->       
   </form>
 
-  <h2 class="text-center">Weather and forecasts in {{city_name}}, BY</h2>
+  <h2>Weather and forecasts in {{city_name}}, BY</h2>
 
   <table class="table table-striped table-condensed">
     <tr class="info">
-      <th><h4 class="text-center">Data of time forecasted</h4></th>
-      <th><h4 class="text-center">Temperature</h4></th>
-      <th><h4 class="text-center">Wind speed</h4></th>
-      <th><h4 class="text-center">Atmospheric pressure</h4></th>
+      <th><h4>Data of time forecasted</h4></th>
+      <th><h4>Temperature</h4></th>
+      <th><h4>Wind speed</h4></th>
+      <th><h4>Atmospheric pressure</h4></th>
       <th><h4 class="text-center">Weather</h4></th>
     </tr>
     {% for i in text%}
     <tr>
-      <th class="text-center" style="vertical-align:middle"><h4>{{ i["dt_txt" ] }}</h4></th> 
-      <th class="text-center" style="vertical-align:middle"><h4>{{ i["temp"] }} °C</h4></th>
-      <th class="text-center" style="vertical-align:middle"><h4>{{ i["wind_speed"] }} m/s</h4></th>
-      <th class="text-center" style="vertical-align:middle"><h4>{{ i["pressure"] }} hPa</h4></th>
+      <th style="vertical-align:middle"><h4>{{ i["dt_txt" ] }}</h4></th> 
+      <th style="vertical-align:middle"><h4>{{ i["temp"] }} °C</h4></th>
+      <th style="vertical-align:middle"><h4>{{ i["wind_speed"] }} m/s</h4></th>
+      <th style="vertical-align:middle"><h4>{{ i["pressure"] }} hPa</h4></th>
       <th class="bg-primary" style="vertical-align:middle"><img src="{{ i["weather_icon"] }}" class="img-responsive center-block" alt="Responsive image"></th>
     </tr>
     {% endfor %}
