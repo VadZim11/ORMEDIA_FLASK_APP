@@ -1,9 +1,13 @@
 from app import app
 from flask import render_template
+import requests
+import json
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    url = "http://rzhunemogu.ru/RandJSON.aspx?CType=1"
+    anekdot = requests.get(url).json(strict=False)["content"]
+    return render_template("home.html", anekdot=anekdot)
 
 @app.route("/contakts")
 def contakts():
