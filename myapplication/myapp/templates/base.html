@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
     <title>
       {% block title %}
       {% endblock %} | Flask app
     </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for("static", filename = "css/style.css") }}">
+    <!-- CSS
+   ================================================== -->
+    <link rel="stylesheet" href="{{ url_for("static", filename = "css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for("static", filename = "css/animatecss") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename = "css/main.css") }}">
+    <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{{ url_for("static", filename = "favicon/favicon-16x16.png") }}" >
   </head>
 
-  <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">          
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></button>
-          <a class="navbar-brand" href=" {{ url_for("home") }} ">Home</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href=" {{ url_for("movies.index") }} ">Movies <span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href=" {{ url_for("weather.index") }} ">Weather <span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href=" {{ url_for("courses.index") }} ">Courses <span class="sr-only">(current)</span></a></li>            
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href=" {{ url_for("contakts") }} ">Contacts</a></li>
-          </ul>
+  <body>  
+    <header class="header">
+      <div class="container">  
+        <div class="row">
+          <div class="col-lg-3">
+            <li class="menu__item">
+              <a href=" {{ url_for("home") }} ">Home</a>
+            </li>
+          </div>
+          <div class="col-lg-6 ml-auto">
+            <nav>
+              <ul class="menu d-flex justify-content-center animated fadeInDown">
+                <li class="menu__item">
+                  <a href=" {{ url_for("movies.index") }} ">Movies</a>
+                </li>
+                <li class="menu__item">
+                  <a href=" {{ url_for("weather.index") }} ">Weather</a>
+                </li>
+                <li class="menu__item">
+                  <a href=" {{ url_for("courses.index") }} ">Courses</a>
+                </li>
+                <li class="menu__item">
+                    <a href=" {{ url_for("contakts") }} ">Contacts</a>
+                  </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>  
 
-    <div class="container">
+    <section class="features">
+      <div class="container">
         <h1>
           {% block hello %}
           {% endblock %}
         </h1>
-    </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="credits">
+              <p>Vadzim Gryshkevich</p>
+              <p>E-mail: vadzim11@tut.by</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
   </body>
 </html>
