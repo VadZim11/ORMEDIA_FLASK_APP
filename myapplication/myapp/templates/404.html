@@ -5,5 +5,17 @@
 {% endblock %}
 
 {% block hello %}
-  This 404 page
+
+<div class="container">
+  <div id="notfound">
+		<div class="notfound">
+			<div class="notfound-404">
+				<h1>404</h1>
+				<h2>Page not found</h2>
+			</div>
+			<a href=" {{url_for("home")}} ">Home</a>
+		</div>
+  </div>
+</div> 
+
 {% endblock %}
