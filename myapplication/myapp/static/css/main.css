@@ -1,4 +1,4 @@
-/* Спецификация */
+/* Specifikation */
 
 body {
     font-family: 'PT Sans', sans-serif;
@@ -25,7 +25,7 @@ h2 {
 
 .title {
     padding-top: 100px;
-    padding-bottom:70px;
+    padding-bottom: 70px;
     text-align: center;
 }
 
@@ -44,27 +44,78 @@ h2 {
 }
 
 
-/* Первый экран */
+/* Header */
 
 .header {
-    background: #fcdb00;
+    background: #000;
     color: #010101;
-    padding-top:8px;
+    padding-top: 8px;
     padding-bottom: 8px;
 }
 
 .menu {
-    margin-top:8px;
+    margin-top: 8px;
 }
 
 .menu__item {
     margin: 0 65px;
 }
 
-/* Второй экран */
+.menu__item a {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ff4800;
+}
+
+.offer {
+    margin-top:117px;
+}
+
+.offer__title {
+    font-size:32px;
+    margin-bottom: 15px;
+}
+
+.offer__intro {
+    font-size: 20px;
+    line-height: 1.3em;
+}
+
+.offer__text {
+    font-size: 16px;
+    margin-top:15px;
+    color: #555555;
+    width: 400px;
+}
+
+.icons__item {
+    margin-right:30px;
+}
+
+.icons__item a {
+    color: #000;
+    font-size: 42px;
+    transition: all 0.3s ease;
+}
+
+.icons__item a:hover {
+    text-decoration: none;
+    color: #ff4800;
+}
+
+.ipad {
+    display: block;
+    margin: 60px auto 0;
+}
+
+/* Feature */
 
 .feature {
-    margin-bottom: 65px;
+    padding-top: 8px;
+}
+
+.menu {
+    margin-top:8px;
 }
 
 .feature__icon {
@@ -77,61 +128,22 @@ h2 {
     color: #898989
 }
 
-/* Третий экран */
-
-.touch {
-    background: #010101;
-    color: #fff;
-}
-
-.form {
-    text-align: center;
-}
-
-.form__input {
-    background: #fff;
-    font-size: 16px;
-    font-family: 'PT Sans', sans-serif;
-    border-radius: 5px;
-    width: 580px;
-    padding: 14px 0;
-    margin-right:21px;
-    border: 0;
-    padding-left:23px;
-    outline: none;
-}
-
-.form__btn {
-    font-family: 'PT Sans', sans-serif;
-    background: #fcdb00;
-    color: #000;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 5px;
-    width: 126px;
-    border: 0;
-    padding: 14px 0;
-    cursor: pointer;
-    outline: none;
-}
-
-/* Футер */
+/* Foter */
 
 .footer {
     background: #000;
-    padding:50px 0 94px;
+    padding:8px 0 8px;
 }
 
 .credits {
-    color: #fff;
-    font-size: 16px;
-    width: 184px;
-    margin: 0 auto;
+    color: #ff4800;
+    font-size: 18px;
+    width: 350px;
+    margin: 0 auto;    
     text-align: center;
 }
 
-/* Медиа-запросы */
+/* Media */
 
 @media screen and (max-width: 992px) {
     .logo {

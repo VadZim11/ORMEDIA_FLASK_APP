@@ -5,7 +5,67 @@
 {% endblock %}
 
 {% block hello %}
-<div class="jumbotron">
-  {{ anekdot }}
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="title">
+        <h2 class="title__main">
+          Flask app
+        </h2>        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="feature d-flex">
+        <i class="fa fa-file-movie-o feature__icon"></i>
+        <div class="feature__block">
+          <h3 class="feature__title">
+            <a class= "menu__item" href=" {{url_for("movies.index")}} ">Movies</a>
+          </h3>
+          <p class="feature__text">
+            Watch what films are shown in cinemas of Minsk today.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="feature d-flex">
+        <i class="fa fa-thermometer-quarter feature__icon"></i>
+        <div class="feature__block">
+          <h3 class="feature__title">
+            <a href=" {{url_for("weather.index")}} ">Weather</a>
+          </h3>
+          <p class="feature__text">
+            Check the weather in Minsk and other regional cities of Belarus.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="feature d-flex">
+        <i class="fa fa-dollar feature__icon"></i>
+        <div class="feature__block">
+          <h3 class="feature__title">
+            <a href="{{ url_for("courses.index")}} ">Courses</a>
+          </h3>
+        <p class="feature__text">
+          Get currency rates today.
+        </p>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="title">
+          <h2 class="title__main">
+            <div class="jumbotron">
+              {{ anekdot }}
+            </div>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>  
 {% endblock %}
