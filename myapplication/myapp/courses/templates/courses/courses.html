@@ -5,30 +5,35 @@
 {% endblock %}
 
 {% block hello %}
+
+<section class="touch">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 m-auto">
+        <form  method="POST" class="form">
+          <label for="inputState"><h2>Select currency</h2></label>
+          <select select name="cur_abbreviation" id="inputState" class="form__input">
+            <option  value="ALL" selected>ALL</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="RUB">RUB</option>
+          </select>
+          <button type="submit" class="form__btn" value="USD">Select</button> 
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="container">
-  <form  method="POST">
-    
-      <div class="row">
-          <div class="col-lg-6">
-            <div class="input-group">
-              <div>
-                  <label for="inputState">Select currency</label>
-                  <select select name="cur_abbreviation" id="inputState" class="form-control">
-                    <option  value="ALL" selected>ALL</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="RUB">RUB</option>
-                  </select>
-                </div>
-            </div><!-- /input-группа --> 
-            <button type="submit" class="btn btn-primary" value="USD">Select</button> 
-          </div><!-- /.col-lg-6 -->  
-      </div><!-- /.строки -->  
-     
-  </form>
+  <div class="title">
+    <h2 class="title__main">
+      Official {{ cur_abbreviation }} rate
+    </h2>
+  </div>
+</div>
 
-  <h2>Official {{ cur_abbreviation }} rate</h2>
-
+<div class="container">
   <table class="table table-striped table-condensed">
     <tr class="info">
       <th><h4>Data</h4></th>
@@ -49,5 +54,6 @@
     </tr>
     {% endfor %}
   </table>
-   
+</div>
+
 {% endblock %}

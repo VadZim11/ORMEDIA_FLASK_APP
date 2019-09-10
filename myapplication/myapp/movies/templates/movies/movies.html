@@ -6,55 +6,64 @@
 
 {% block hello %}
 
-<div class="container">
-  <form  method="POST">    
-      <div class="row">
-          <div class="col-lg-6">
-            <div class="input-group">
-              <div>
-                <label for="inputState">Select date</label>
-                <select select name="date_movie" id="inputState" class="form-control"> 
-                  {% for date in dates %}
-                  <option  value="{{ date.date }}" >{{ date.date }}</option>
-                  {% endfor %}
-                </select>
-              </div>
-            </div><!-- /input-группа --> 
-            <button type="submit" class="btn btn-primary" value="">Select</button> 
-          </div><!-- /.col-lg-6 -->  
-      </div><!-- /.строки -->       
-  </form>
-
+<section class="touch">
   <div class="container">
-    <h2> On the date {{ date_muvie }} </h2>
+    <div class="row">
+      <div class="col-lg-10 m-auto">
+        <form  method="POST" class="form">
+          <label for="inputState"><h2>Select date</h2></label>
+          <select select name="date_movie" id="inputState" class="form__input"> 
+            {% for date in dates %}
+          <option  value="{{ date.date }}" >{{ date.date }}</option>
+            {% endfor %}
+          </select>
+          <button type="submit" class="form__btn" value="">Select</button> 
+        </form>
+      </div>
+    </div>
   </div>
+</section>
 
-<div class="row">
-  {% for i in pages.items %}
-  <div class="col-md-3">
-    <h3>{{ i.name }}</h3>
-    <img src="{{ i.muvi_image }}" alt="{{ i.name }}" class="img-thumbnail">
-    <h3>{{ i.film_genre }}</h3>
+<div class="container">
+  <div class="title">
+    <h2 class="title__main">
+      On the date {{ date_muvie }}
+    </h2>
   </div>
-  {% endfor %}
 </div>
 
-<nav>
-    <ul class="pagination">
-      <li {% if not pages.has_prev %} class="disabled" {% endif %}>
-        <a href="./?page={{ pages.prev_num }}&date={{ date_muvie }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-      </li>
+<div class="container">
+  <div class="row">
+    {% for i in pages.items %}
+    <div class="col-md-3">
+      <h3>{{ i.name }}</h3>
+      <img src="{{ i.muvi_image }}" alt="{{ i.name }}" class="img-thumbnail">
+      <h3>{{ i.film_genre }}</h3>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 
-      {% for page in pages.iter_pages(left_edge = 7, right_edge = 7) %}
-      <li {% if page == pages.page %} class="active" {% endif %}>
-        <a href="./?page={{ page }}&date={{ date_muvie }}">{{ page }}<span class="sr-only"></span></a>
-      </li>
-      {% endfor %} 
-
-      <li {% if not pages.has_next %} class="disabled" {% endif %}>
-          <a href="./?page={{ pages.next_num }}&date={{date_muvie}}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+<div class="container">
+  <div class="title__main">
+    <nav>
+     <ul class="pagination">
+        <li {% if not pages.has_prev %} class="disabled" {% endif %}>
+          <a href="./?page={{ pages.prev_num }}&date={{ date_muvie }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
         </li>
-    </ul>
-  </nav>
+
+        {% for page in pages.iter_pages(left_edge = 7, right_edge = 7) %}
+        <li {% if page == pages.page %} class="active" {% endif %}>
+          <a href="./?page={{ page }}&date={{ date_muvie }}">{{ page }}<span class="sr-only"></span></a>
+        </li>
+        {% endfor %} 
+
+        <li {% if not pages.has_next %} class="disabled" {% endif %}>
+            <a href="./?page={{ pages.next_num }}&date={{date_muvie}}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
 {% endblock %}
