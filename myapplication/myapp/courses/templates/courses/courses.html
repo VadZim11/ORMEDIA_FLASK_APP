@@ -34,26 +34,28 @@
 </div>
 
 <div class="container">
-  <table class="table table-striped table-condensed">
-    <tr class="info">
-      <th><h4>Data</h4></th>
-      <th><h4>Scale</h4></th>
-      <th><h4>Abbreviation</h4></th>
-      <th><h4>Currency name</h4></th>
-      <th><h4>Exchange rate</h4></th>
-      <th><h4>BIN</h4></th>
-    </tr>
-    {% for i in text%}
-    <tr>
-      <th><h4>{{ i["date" ] }}</h4></th> 
-      <th><h4>{{ i["cur_scale"] }}</h4></th>
-      <th><h4>{{ i["cur_abbreviation"] }}</h4></th>
-      <th><h4>{{ i["cur_name"] }}</h4></th>
-      <th><h4>{{ i["cur_officialRate"] }}</h4></th>
-      <th><h4>BIN</h4></th>
-    </tr>
-    {% endfor %}
-  </table>
+  <div class="table-responsive">
+    <table class="table table-striped table-condensed">
+      <tr class="info">
+        <th><h4>Data</h4></th>
+        <th><h4>Scale</h4></th>
+        <th><h4>Abbreviation</h4></th>
+        <th><h4>Currency name</h4></th>
+        <th><h4>Exchange rate</h4></th>
+        <th><h4>BIN</h4></th>
+      </tr>
+      {% for i in text%}
+      <tr>
+        <th><h4>{{ i["date" ] }}</h4></th> 
+        <th><h4>{{ i["cur_scale"] }}</h4></th>
+        <th><h4>{{ i["cur_abbreviation"] }}</h4></th>
+        <th><h4>{{ i["cur_name"] }}</h4></th>
+        <th><h4>{{ i["cur_officialRate"] }}</h4></th>
+        <th><h4>BIN</h4></th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
 </div>
 
 {% endblock %}
