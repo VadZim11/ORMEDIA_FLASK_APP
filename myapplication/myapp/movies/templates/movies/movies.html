@@ -53,24 +53,26 @@
 </div>
 
 <div class="container">
-  <div class="title__main">
-    <nav>
-     <ul class="pagination justify-content-center">
-        <li {% if not pages.has_prev %} class="page-item disabled" {% endif %}>
-          <a href="./?page={{ pages.prev_num }}&date={{ date_muvie }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-        </li>
+  <div class="title">
+    <div class="title__main">
+      <nav>
+      <ul class="pagination justify-content-center">
+          <li {% if not pages.has_prev %} class="page-item disabled" {% endif %}>
+            <a class="page-link" href="./?page={{ pages.prev_num }}&date={{ date_muvie }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+          </li>
 
-        {% for page in pages.iter_pages(left_edge = 7, right_edge = 7) %}
-        <li {% if page == pages.page %} class="page-item active" {% endif %}>
-          <a href="./?page={{ page }}&date={{ date_muvie }}">{{ page }}<span class="sr-only"></span></a>
-        </li>
-        {% endfor %} 
+          {% for page in pages.iter_pages(left_edge = 7, right_edge = 7) %}
+          <li {% if page == pages.page %} class="page-item active" {% endif %}>
+            <a class="page-link" href="./?page={{ page }}&date={{ date_muvie }}">{{ page }}<span class="sr-only"></span></a>
+          </li>
+          {% endfor %} 
 
-        <li {% if not pages.has_next %} class="page-item disabled" {% endif %}>
-            <a href="./?page={{ pages.next_num }}&date={{date_muvie}}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-        </li>
-      </ul>
-    </nav>
+          <li {% if not pages.has_next %} class="page-item disabled" {% endif %}>
+            <a class="page-link" href="./?page={{ pages.next_num }}&date={{date_muvie}}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>  
   </div>
 </div>
 
