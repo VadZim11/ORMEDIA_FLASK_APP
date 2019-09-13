@@ -60,4 +60,8 @@ def index():
 
         pages = movies.filter(Movies.date == date_muvie).paginate(page=page, per_page=4)
 
+        ### add date base
+        # for i in movies.all():
+        #    print("( \""+i.name+"\", \""+i.muvi_href+"\", \""+i.muvi_image+"\", \""+i.film_genre+"\", \""+str(i.date)+"\"), ")
+
         return render_template("movies/movies.html", pages=pages, dates=reversed(dates), date_muvie=date_muvie)
